@@ -12,6 +12,15 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+@font-face {
+  font-family: astroworld;
+  src: url(../font/Dorian-Gray.ttf);
+}
+
+h1 {
+  font-family: 'astroworld';
+}
+
 
 .App-header {
   background-color: #282c34;

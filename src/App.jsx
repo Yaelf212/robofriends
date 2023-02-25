@@ -3,6 +3,8 @@ import CardList from "./CardList";
 import { robots } from "./robots";
 import SearchBox from "./SearchBox";
 import { useEffect, useState } from "react";
+
+// Main Page
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredRobots, setFilteredRobots] = useState(robots);

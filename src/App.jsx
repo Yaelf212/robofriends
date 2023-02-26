@@ -3,6 +3,9 @@ import CardList from "./CardList";
 import { robots } from "./robots";
 import SearchBox from "./SearchBox";
 import { useEffect, useState } from "react";
+import Scroll from "./Scroll";
+import ErrorBoundary from "./ErrorBoundary";
+
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredRobots, setFilteredRobots] = useState(robots);
@@ -23,7 +26,11 @@ function App() {
     <div className="tc">
       <h1>RoboFriends </h1>
       <SearchBox searchfield={searchTerm} searchChange={onSearchChange} />
-      <CardList robots={filteredRobots} />
+      <Scroll>
+        <ErrorBoundary>
+          <CardList robots={filteredRobots} />
+        </ErrorBoundary>
+      </Scroll>
     </div>
   );
 }

@@ -1,9 +1,9 @@
 import "./App.css";
-import CardList from "./CardList";
-import { robots } from "./robots";
-import SearchBox from "./SearchBox";
+import CardList from "../Components/CardList";
+import { robots } from "../robots";
+import SearchBox from "../Components/SearchBox";
 import { useEffect, useState } from "react";
-import Scroll from "./Scroll";
+import Scroll from "../Containers/Scroll";
 import ErrorBoundary from "./ErrorBoundary";
 
 function App() {
@@ -16,8 +16,6 @@ function App() {
         robot.name.toLowerCase().includes(searchTerm.toLowerCase())
       )
     );
-    console.log(searchTerm);
-    console.log(filteredRobots);
   }, [searchTerm]);
   function onSearchChange(event) {
     setSearchTerm(event.target.value);
